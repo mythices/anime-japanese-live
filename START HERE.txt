@@ -1,0 +1,101 @@
+ANIME JAPANESE LIVE - ALPHA 0.1.0
+Windows x64 tester build | 23 September 2026
+
+FIRST TIME? Open STEP BY STEP TUTORIAL.txt and follow the numbered steps.
+SOMETHING WRONG? Open PROBLEMS AND FIXES.txt and find your symptom.
+Need more help? Email mythicest@gmail.com or use the Feedback tab.
+
+QUICK SETUP
+1. Extract the ENTIRE ZIP to a normal folder, such as Documents.
+   Do not run it inside the ZIP or move the EXE away from its _internal folder.
+2. Install the Windows Stremio desktop app from https://www.stremio.com/downloads
+   This alpha expects the WebView2 desktop version installed for your user at:
+   %LOCALAPPDATA%\Programs\Stremio\stremio-shell-ng.exe
+   Older Qt builds, browser Stremio, phones and other operating systems are not
+   supported by this build.
+3. Double-click Check setup.cmd. It checks the bundled app and dictionary,
+   looks for Stremio and reports whether optional local AI is installed.
+4. Save your playback position and close Stremio first. Double-click
+   Start Anime Japanese.cmd. The companion opens Stremio in learning mode;
+   it may restart an already-running Stremio window. Keep the companion open.
+5. Play a video you have access to and select a JAPANESE subtitle track.
+   The app does not create subtitles from audio or supply anime/streams.
+6. Enable Romaji in the overlay toolbar to show pronunciation beneath Japanese.
+   Click a word to pause and open its dictionary meaning.
+
+If Windows shows an unsigned-app warning, only proceed if you trust the person
+who supplied this build. This alpha is not code-signed. Do not disable antivirus.
+No administrator account, Python installation, subscription or API key is needed.
+
+USING IT
+- No Japanese text? Use Load a Japanese subtitle file in the companion and
+  select an SRT, VTT or ASS matching your video. Native/embedded tracks may
+  not be readable automatically. Follow selected track returns to track mode.
+- Pace - / Pace + adjusts estimated word highlighting. It is a reading guide,
+  not speech recognition or exact word/audio alignment. File mode uses the
+  subtitle timestamps, but individual word timings are still estimated.
+- Click a word for meanings and hiragana with romaji; katakana is preserved
+  where used in the source. Expand shows more information.
+- Say word / Slowly needs internet. Opening a word preloads its normal audio.
+- Drag the popup by its top handle. Its position and toolbar preferences are
+  remembered in Stremio's local browser storage.
+- Resume video continues playback. Closing the companion removes its overlay.
+- Donations through the PayPal button are entirely optional. All features free.
+
+OPTIONAL: CONTEXT EXPLANATIONS AND CONNECTED WORDS
+Double-click Setup Local AI.cmd once. Leave its window open until it says ready.
+It downloads Ollama 0.34.2 and Qwen3 8B from their official distribution services.
+Expect about 7 GB of downloads and allow at least 15 GB free disk space for setup.
+We recommend 16 GB RAM or more; a capable GPU helps. Slow PCs may time out.
+The core subtitle/dictionary functions work without this optional step.
+Rerun setup after an interrupted model download; Ollama can reuse model chunks.
+The first explanation can be much slower while the model loads into memory.
+AI answers and connected-word suggestions can be wrong.
+
+PRIVACY AND NETWORK
+Dictionary lookup, kana and romaji processing run locally.
+Context requests send nearby subtitle lines only to Ollama on this PC, at
+127.0.0.1:11439. There are no paid AI calls or API keys.
+Pronunciation uses Microsoft's online voice service through edge-tts: opening
+a word sends that word for normal-speed audio; Slow sends it for slower audio.
+Voice availability is not guaranteed. The companion has no analytics uploader.
+The PayPal button opens https://paypal.me/mythices in your browser.
+Stremio and its providers have their own network activity and privacy policies.
+Learning mode enables a local Stremio debugging connection on port 19371.
+After testing, close Stremio fully and open it normally to leave learning mode.
+
+TROUBLESHOOTING / KNOWN LIMITATIONS
+- Waiting for Stremio: check the installed path above; use Open / reconnect
+  Stremio in learning mode. Other Stremio builds/updates may break integration.
+- Blank overlay: confirm Japanese subtitles are selected; try a matching file.
+- Wrong highlights: check the subtitle timing, then adjust Pace. Rapid dialogue,
+  overlapping speakers, pauses and unusual readings can still be inaccurate.
+- Voice error: check internet, close/reopen the word and retry. Online voice may
+  be blocked, unavailable or rate-limited. There is no bundled offline voice.
+- Context fails: finish optional AI setup; allow model loading time; rerun Check
+  setup. A model listed as installed does not guarantee fast inference.
+- App already open: only one companion instance runs per Windows user.
+- I've tested this early build on my Windows PC. I need your feedback to check
+  how it works on other setups. Some anime and subtitle formats may not work.
+
+FEEDBACK
+Click Send feedback in the word popup or open the companion's Feedback tab.
+It opens an email draft to mythicest@gmail.com; nothing is sent automatically.
+If you use webmail, copy the address from the Feedback tab instead.
+Send me: alpha version, Windows version, Stremio version, steps to
+reproduce, expected/actual result, and a screenshot if helpful. For timing bugs,
+include video timestamp and whether using track mode or a subtitle file.
+Do not send account credentials, API keys, private stream URLs or full videos.
+Check setup displays diagnostics locally; it does not upload a report.
+
+REMOVAL
+Close the companion and delete its extracted folder. Optional AI stays under
+%LOCALAPPDATA%\AnimeJapanese\ollama. To remove that too, exit its ollama.exe
+process via Task Manager and delete that specific folder. This also removes
+the downloaded model. Overlay preferences remain in Stremio's browser storage.
+
+SOURCE AND LICENSES
+Application source and a reproducible build recipe are in Source.
+See LICENSE.txt, THIRD-PARTY.txt and licenses for redistribution notices.
+This is an unofficial companion, not affiliated with Stremio or EDRDG.
+Ollama setup reference: https://docs.ollama.com/windows
