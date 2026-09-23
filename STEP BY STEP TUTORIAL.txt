@@ -1,0 +1,157 @@
+ANIME JAPANESE LIVE - YOUR FIRST SESSION
+Alpha 0.1.0 for Windows x64
+
+You do not need to know programming. Start with Steps 1-8; the extra context
+features are optional. No Python installation or API key is needed.
+
+STEP 1 - SAVE AND EXTRACT THE DOWNLOAD
+1. Save Anime-Japanese-Alpha-0.1.0-Windows-x64.zip to your computer.
+2. Open File Explorer (the yellow folder icon) and go to Downloads.
+3. Right-click the ZIP and select Extract All.
+4. Choose a folder you can find again, such as Documents, then click Extract.
+5. Open the extracted Anime Japanese Alpha 0.1.0 folder.
+
+You should see START HERE.txt, Check setup.cmd, Start Anime Japanese.cmd,
+Setup Local AI.cmd, and the App folder. Windows may hide the .cmd and .txt
+endings. Keep everything together. Do not start the app from inside the ZIP.
+
+STEP 2 - CHECK YOUR STREMIO INSTALLATION
+1. If you do not have Stremio, visit https://www.stremio.com/downloads and
+   install the Windows desktop app using its installer.
+2. This alpha needs the desktop version that uses WebView2. Browser Stremio
+   and older Qt desktop versions are not supported.
+3. You can check the expected location without typing any commands:
+   - Press the Windows key and R together.
+   - Paste: %LOCALAPPDATA%\Programs\Stremio
+   - Press Enter.
+   - Look for stremio-shell-ng.exe (Windows may hide .exe).
+
+If the folder or file is missing, see problem 3 in PROBLEMS AND FIXES.txt.
+Do not rename a different Stremio executable to make it match.
+
+STEP 3 - RUN THE SETUP CHECK
+1. Return to the extracted alpha folder.
+2. Double-click Check setup.cmd.
+3. Wait for the checks to finish. A text window shows the results.
+4. Look for PASS for the app and the expected Stremio executable.
+5. A message saying optional AI is not installed is OK. You can start learning
+   now and install those extra features later in Step 9.
+6. When finished, press a key to close the check window.
+
+If it says CHECK FAILED, take a screenshot of that message and use the fixes
+file. The check stays on your computer; it does not send me a report.
+
+STEP 4 - START LEARNING MODE
+1. Note your video position if you are already watching something.
+2. Close Stremio before starting the companion.
+3. Double-click Start Anime Japanese.cmd in the extracted folder.
+4. Keep the Anime Japanese Live companion window open. You can minimize it.
+5. Stremio should open. Wait for the companion to connect.
+6. If needed, click Open / reconnect Stremio in learning mode in the companion.
+
+This may restart an existing Stremio window. Only one companion runs at once.
+An unsigned-app prompt can appear because this is an unsigned alpha. Only
+continue if you trust the download's source; do not turn off antivirus.
+
+STEP 5 - CHOOSE A VIDEO AND JAPANESE SUBTITLES
+1. In Stremio, play a video you already have access to.
+2. Open the player's subtitle selection and choose a Japanese track.
+   It may be labelled Japanese or 日本語. Button placement depends on Stremio.
+3. Let the video play until someone speaks.
+4. Look for the learning subtitle line and the Japanese Live toolbar.
+5. Check that the toolbar's main toggle says On. If it says Off, click it.
+
+The app needs Japanese subtitle text. It does not listen to the dialogue and
+create subtitles, and it does not provide anime, streams or subtitle tracks.
+No readable Japanese track? Use Step 10 with a matching subtitle file.
+
+STEP 6 - SHOW PRONUNCIATION AND LOOK UP A WORD
+1. Find Romaji: Off in the learning toolbar and click it.
+2. It should change to Romaji: On. English-letter pronunciation appears below
+   the Japanese words. These letters show pronunciation, not translation.
+3. Click a Japanese word. Playback pauses and a word popup opens.
+4. Read its dictionary meanings. A word can have several possible meanings.
+5. The dictionary-form area places the Japanese reading above its romaji.
+6. Click Expand - More info for extra information. The button may use a dot
+   instead of a dash. Connected-word explanations require Step 9 first.
+7. Click Resume video when you are ready to continue.
+
+The learning display uses hiragana and preserves katakana where appropriate.
+There is no whole-line English subtitle toggle in this alpha.
+
+STEP 7 - LISTEN TO THE WORD AND MOVE THE POPUP
+1. Open a word and click Say word. Keep your internet connection on.
+2. If audio is still loading, wait; avoid repeatedly clicking the button.
+3. Click Slowly for a slower pronunciation.
+4. To move the popup, hold your left mouse button on Drag to move at its top.
+5. Move it to a comfortable place, then release the mouse button.
+6. Its position is remembered in Stremio for your next session.
+
+Opening a word prepares its normal audio online. It sends that word to the
+voice service, but does not play it until you click. No offline voice is bundled.
+
+STEP 8 - ADJUST THE READING HIGHLIGHT
+1. Play a line and watch which word is highlighted.
+2. If the highlight moves too slowly, click Pace + once and try another line.
+3. If it moves too quickly, click Pace - once and try another line.
+4. The Estimated pace button shows the current setting; 1.0x is the default.
+5. Click the Estimated pace button to turn the highlight off if it distracts you.
+
+This is an estimated reading guide. It cannot precisely follow every spoken
+word. If the entire subtitle line is early or late, check the subtitle track
+or file first; changing Pace does not fix a mismatched subtitle file.
+
+STEP 9 - OPTIONAL CONTEXT AND CONNECTED-WORD EXPLANATIONS
+Skip this step if you only want subtitles, dictionary meanings and pronunciation.
+
+1. Connect to the internet. Allow at least 15 GB free space on the drive holding
+   your Windows user folder, normally C:. Downloads total about 7 GB.
+2. In the extracted alpha folder, double-click Setup Local AI.cmd.
+3. Leave the setup window open while it downloads and unpacks the engine and
+   model. The time depends on your connection and PC. Prevent the PC sleeping.
+4. Wait for READY. If you see SETUP FAILED, use problems 10-11 in the fixes file.
+5. Press a key to close the completed setup window.
+6. Open a word in a playing video and click Explain in context.
+7. Wait for the result. The first request can take longer while the model loads.
+8. To see how a word connects to other words, click Expand - More info.
+
+This uses Qwen3 8B through Ollama on your own PC. No account or API key is
+needed. Subtitle snippets stay local for context explanations. Answers can be
+wrong or incomplete. A PC with 16 GB RAM or more is recommended; a capable GPU
+helps. Low-memory or slower PCs may not finish before the request times out.
+
+STEP 10 - USE YOUR OWN SUBTITLE FILE IF THE TRACK IS NOT READABLE
+1. Obtain a Japanese SRT, VTT or ASS subtitle file matching your exact video.
+2. Start that video in Stremio and make sure the companion is connected.
+3. In the companion, click Load a Japanese subtitle file.
+4. Choose your subtitle file and click Open.
+5. Wait for the message that captions have loaded.
+6. Play the video. The file's captions follow the player's playback time.
+7. If lines do not match the dialogue, use a file for the correct release or
+   edit the subtitle timing in a subtitle editor. Pace +/- only changes the
+   word highlight; it cannot shift subtitle timestamps.
+8. Click Follow selected track to stop using the imported file.
+
+The included example.srt is just sample text. It is not a subtitle file for
+your anime. File mode also requires the companion's Stremio connection.
+
+STEP 11 - SEND FEEDBACK
+1. Click Send feedback in the word popup, or open the companion's Feedback tab.
+2. Your email app should open a draft addressed to mythicest@gmail.com.
+3. Describe what happened and the steps that caused it. Include your Windows
+   and Stremio versions and whether you used a track or a subtitle file.
+4. Add a screenshot if useful, review the email, then send it yourself.
+5. If no email app opens, click Copy email address in the Feedback tab and
+   paste it into a new message in your usual email website.
+
+You can also fill in TESTER FEEDBACK.txt and attach it to your email.
+Nothing is sent automatically. Thank you for helping me improve the app!
+
+STEP 12 - FINISH AND START AGAIN LATER
+1. Close Anime Japanese Live to remove the learning overlay.
+2. To leave learning mode completely, fully exit Stremio, including its tray
+   icon if present, then open Stremio normally.
+3. Next time you want learning subtitles, run Start Anime Japanese.cmd again.
+4. You do not need to repeat extraction or optional AI setup each time.
+
+Need help? Open PROBLEMS AND FIXES.txt or email mythicest@gmail.com.

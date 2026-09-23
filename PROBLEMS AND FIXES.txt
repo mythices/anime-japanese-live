@@ -1,0 +1,222 @@
+ANIME JAPANESE LIVE - PROBLEMS AND FIXES
+Alpha 0.1.0 | Help: mythicest@gmail.com
+
+This covers problems encountered during development and common setup issues.
+Some entries are workarounds or known limitations, not guaranteed fixes.
+Try the matching steps in order. If they do not help, send me the exact error.
+Do not disable antivirus, delete Stremio settings, or install random fix tools.
+
+QUICK INDEX
+ 1. The app does not open / files are missing
+ 2. Windows warns about the download or blocks a script
+ 3. Supported Stremio install is missing
+ 4. Waiting for Stremio / connection lost
+ 5. Video plays but learning subtitles do not appear
+ 6. Subtitle file fails to load or lines are out of sync
+ 7. Romaji is missing / Japanese text looks unexpected
+ 8. Highlighting is early, late or unstable
+ 9. Say word or Slowly fails, is silent or loads slowly
+10. Context or connected words does not work
+11. Optional AI setup fails
+12. Popup position or size is awkward
+13. Changes do not appear / an older copy opens
+14. Feedback button does not open email
+15. Dictionary or explanation seems wrong
+16. How to leave learning mode or remove the app
+
+1 - THE APP DOES NOT OPEN / FILES ARE MISSING
+Symptoms: missing DLL, missing dictionary, CHECK FAILED, or a window closes.
+1. Right-click the downloaded ZIP and choose Extract All.
+2. Open the extracted folder, not the ZIP preview.
+3. Keep App, its _internal folder, Setup and the launcher files together.
+4. Run Check setup.cmd. Wait for the result and note the first error.
+5. If files are missing, extract a fresh copy into a NEW folder and try that.
+6. If extraction fails, download the ZIP again and check available disk space.
+This build is for Windows x64; it is not a Mac, Linux or mobile package.
+If the check still fails, send a screenshot. Do not copy individual DLL files
+from websites into the app folder.
+
+2 - WINDOWS WARNS ABOUT THE DOWNLOAD OR BLOCKS A SCRIPT
+This alpha is unsigned, so an unknown-publisher warning is possible.
+1. Confirm that this is the ZIP you received from me or a source you trust.
+2. If Windows offers More info, read it before deciding whether to continue.
+3. If security software reports a specific threat, stop and send me that
+   message. Do not disable protection or add broad exclusions.
+4. Start the .cmd launchers, rather than double-clicking scripts inside Setup.
+5. If a work or school policy blocks scripts, ask its administrator. The app
+   should not require a system-wide PowerShell policy change or admin access.
+
+3 - SUPPORTED STREMIO INSTALL IS MISSING
+1. Press Windows+R, paste %LOCALAPPDATA%\Programs\Stremio and press Enter.
+2. Look for stremio-shell-ng.exe.
+3. If missing, check your Windows desktop installation from
+   https://www.stremio.com/downloads and run Check setup.cmd again.
+4. If your version installs elsewhere or has a different executable, tell me
+   the Stremio version and its install location. This alpha does not have a
+   custom-install-location selector.
+Browser Stremio and older Qt desktop builds are unsupported. Do not rename
+their executables. Loading an external subtitle file cannot fix this mismatch.
+
+4 - WAITING FOR STREMIO / CONNECTION LOST
+1. Keep the Anime Japanese Live companion open.
+2. Save your playback position, then click Open / reconnect Stremio in learning
+   mode. This can restart Stremio.
+3. If still disconnected, close the companion and fully exit Stremio. Use its
+   tray-menu exit option if it stays open in the background.
+4. Run Start Anime Japanese.cmd again, then resume your video.
+5. Confirm the expected Stremio installation using problem 3.
+The companion connects locally on port 19371. Do not set up router forwarding
+or expose that port to the internet. If another program uses it, or a Stremio
+update breaks integration, send me the error and version rather than changing
+network settings at random.
+
+5 - VIDEO PLAYS BUT LEARNING SUBTITLES DO NOT APPEAR
+1. Check that the learning toolbar says On.
+2. Select Japanese subtitles in Stremio and play a section with dialogue.
+3. If only English subtitles are available, the app cannot turn them into a
+   Japanese subtitle track. It does not transcribe speech.
+4. Some native or embedded tracks cannot be read by the overlay. Use Load a
+   Japanese subtitle file with a matching SRT, VTT or ASS file instead.
+5. If the toolbar itself is absent, follow problem 4.
+The app cannot read subtitles burned into the video image.
+
+6 - SUBTITLE FILE FAILS TO LOAD OR LINES ARE OUT OF SYNC
+1. Make sure the companion is connected before loading a file.
+2. Select an actual Japanese subtitle file, not a ZIP, video or web page.
+3. If the error mentions text encoding, save a copy as UTF-8 using a subtitle
+   editor and load that copy. Keep your original file unchanged.
+4. If the words are correct but the whole line is early or late, check that
+   the subtitle file matches the exact episode and video release.
+5. Use a matching file, or adjust its timestamps in a subtitle editor. The
+   alpha has no separate file-mode subtitle-delay control.
+6. Click Follow selected track when you want to return to Stremio's track.
+Importing a large file may take a moment to prepare. The sample example.srt
+is only a demo and will not match an arbitrary anime episode.
+
+7 - ROMAJI IS MISSING / JAPANESE TEXT LOOKS UNEXPECTED
+1. Click Romaji: Off in the toolbar so it reads Romaji: On.
+2. This controls pronunciation beneath the subtitle words. It is not English
+   translation. Whole-line English subtitles are not a feature in this build.
+3. In the popup, the dictionary form shows Japanese above its pronunciation.
+4. Katakana can remain for words normally written that way. Hiragana conversion
+   does not mean every Japanese character must become hiragana.
+5. If the dictionary-form area still shows unexpected kanji or lacks its
+   pronunciation, use problem 13 and send me the word and a screenshot.
+Unusual names and ambiguous readings can still be misread.
+
+8 - HIGHLIGHTING IS EARLY, LATE OR UNSTABLE
+Earlier timing problems included uneven word lengths, subtitle-processing
+delay and small backward jumps in the playback clock. This build includes
+changes to make those cases steadier, but timing is still estimated.
+1. Check the entire subtitle line matches the dialogue first; see problem 6.
+2. Start with Estimated pace: 1.0x. Use Pace +/- to return to that value.
+3. Highlight moves too slowly? Try Pace + one step at a time.
+4. Highlight races ahead? Try Pace - one step at a time.
+5. Wait for the next line before judging the change.
+6. If it jumps after buffering or seeking, pause/resume and try the next line.
+7. If distracting, click Estimated pace to switch highlighting off.
+Long pauses, overlapping speakers and dramatic delivery will not always fit.
+The app does not analyze the spoken audio for exact word timestamps. Report
+repeatable jumps with video time, pace setting and track/file mode.
+
+9 - SAY WORD OR SLOWLY FAILS, IS SILENT OR LOADS SLOWLY
+Symptoms may include Could not load pronunciation, Pronunciation timed out,
+or Audio could not play.
+1. Check your internet connection. Dictionary meanings can work offline even
+   when the separate online voice service cannot.
+2. Check Windows volume, the selected output device and the volume mixer for
+   Stremio. Audio plays inside Stremio, not through a separate companion player.
+3. Open one word, click Say word once and wait. A slow request may take up to
+   about 45 seconds before showing a timeout. Avoid repeatedly clicking.
+4. Close that word popup, reopen it and try once more. Try a different word too.
+5. If the app was left open through an update, close/reopen the companion.
+6. If it still fails, try again later and send me the displayed error.
+This build prepares normal audio when a word opens and caches recent words.
+The first request or a new Slowly request may still take longer. Voice-service
+outages, rate limits and network restrictions cannot be fixed by the dictionary.
+Installing local context AI does not install an offline pronunciation voice.
+
+10 - CONTEXT OR CONNECTED WORDS DOES NOT WORK
+1. Run Setup Local AI.cmd from the extracted folder and wait for READY.
+2. Run Check setup.cmd to inspect the local engine/model status.
+3. Open a word and click Explain in context once; allow time for model loading.
+4. For connected words, collapse and expand the extra information to retry.
+5. Close other memory-heavy applications if the model is too slow.
+6. Restart the companion and try a shorter subtitle line.
+If the model cannot finish within the request timeout, your PC may be too slow
+or short of memory for Qwen3 8B. Core subtitles and dictionary still work.
+No clear connected word is a possible result, not proof that setup failed.
+Installing standard Ollama separately does not automatically configure this
+app's dedicated local engine; use the included setup script.
+
+11 - OPTIONAL AI SETUP FAILS
+Engine download failed / Model download failed:
+  Check internet and disk space, then rerun Setup Local AI.cmd. Model downloads
+  can reuse completed chunks; the engine ZIP may download again.
+Engine checksum mismatch:
+  Do not run the downloaded archive manually. Rerun setup to download/check it
+  again. If the mismatch repeats, stop and send me the error.
+Disk full / extraction failed:
+  Make space on the drive containing your Windows user folder. Allow at least
+  15 GB free for setup, then rerun. Do not delete unrelated folders to fix it.
+Local engine did not start / model verification failed:
+  Restart Windows, rerun setup, then run Check setup. If it repeats, send me
+  both outputs. Port 11439 may already be used by another process.
+Engine files found, but server is not running:
+  This can be normal before an explanation: the app starts an installed engine
+  when needed. Try an explanation. If that fails, rerun optional setup.
+Setup cannot repair an existing broken engine:
+  Contact me before removing engine files. Deleting the whole AI folder also
+  deletes the model and can require downloading several gigabytes again.
+
+12 - POPUP POSITION OR SIZE IS AWKWARD
+1. Drag the top bar labelled Drag to move to reposition it.
+2. Click Collapse - Less info if the expanded view takes too much space.
+3. Scroll inside the popup to reach buttons below the visible area.
+4. If a monitor/resolution change caused trouble, resize or maximize Stremio,
+   then close and reopen the word popup; it should fit within the window.
+5. Close/reopen the companion if needed. Send a screenshot if still clipped.
+Position is stored in Stremio's local browser storage. Clearing that storage or
+changing profiles can reset it. There is no separate reset-position button.
+
+13 - CHANGES DO NOT APPEAR / AN OLDER COPY OPENS
+1. Close Anime Japanese Live before trying another copy.
+2. Extract the newest ZIP into a new folder, keeping all its files together.
+3. Run Start Anime Japanese.cmd from that new folder.
+4. Update any shortcut you made to point to the new launcher.
+5. If an old window keeps returning, check the taskbar or Task Manager for an
+   existing Anime Japanese Live instance and close that specific app.
+Only one companion instance runs per Windows user. A second launcher can
+bring the existing version forward instead of starting the newer copy.
+
+14 - FEEDBACK BUTTON DOES NOT OPEN EMAIL
+1. Open the Feedback tab in the companion.
+2. Click Copy email address.
+3. Open your usual email website and create a message to mythicest@gmail.com.
+4. Add your description or completed TESTER FEEDBACK.txt, review, then send.
+The button needs a configured Windows email handler. It does not send messages
+automatically and cannot open every webmail service by itself.
+
+15 - DICTIONARY OR EXPLANATION SEEMS WRONG
+Dictionary entries list several senses, not a guaranteed contextual answer.
+Slang, names, omitted subjects and unusual grammar can confuse tokenization or
+the local context model. Try Explain in context if installed, but verify an
+important meaning with another language reference. Send me the selected word,
+a short relevant subtitle excerpt and why the result seems wrong.
+This is a learning aid; some language errors have no automatic fix yet.
+
+16 - LEAVE LEARNING MODE OR REMOVE THE APP
+1. Close Anime Japanese Live to remove the overlay.
+2. Fully exit Stremio, including its tray icon if present, then reopen it normally.
+3. To remove the companion, delete only its extracted folder after closing it.
+4. Optional AI is stored separately at %LOCALAPPDATA%\AnimeJapanese\ollama.
+   To remove it too, close its ollama.exe process in Task Manager and delete
+   that specific folder. This removes its downloaded model as well.
+5. Overlay preferences remain in Stremio's browser storage; you do not need to
+   erase all Stremio settings to stop using the companion.
+
+STILL STUCK?
+Email mythicest@gmail.com with the exact error, Windows and Stremio versions,
+steps to reproduce and an optional screenshot. Mention alpha 0.1.0 and whether
+you use a selected track or subtitle file. Do not send passwords or private
+stream URLs. I cannot promise a fix for every setup, but clear reports help.
