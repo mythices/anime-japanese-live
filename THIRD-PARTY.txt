@@ -1,0 +1,43 @@
+Dictionary: JMdict and related dictionary data, copyright James William Breen
+and the Electronic Dictionary Research and Development Group (EDRDG).
+Distributed as jamdict-data 1.5 (unmodified database), under CC BY-SA 4.0.
+https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project
+https://www.edrdg.org/edrdg/licence.html
+https://creativecommons.org/licenses/by-sa/4.0/
+See the included Dictionary-license.html and Dictionary-documentation.html.
+This project is not affiliated with or endorsed by EDRDG or Stremio.
+
+Janome 0.5.0 (Apache-2.0), includes MeCab-IPADIC dictionary data.
+https://github.com/mocobeta/janome
+pykakasi 2.3.0 (GPL-3.0-or-later): https://github.com/miurahr/pykakasi
+jamdict 0.1a11.post2 (MIT): https://github.com/neocl/jamdict
+jamdict-data 1.5: https://pypi.org/project/jamdict-data/1.5/
+The full installed dependency distributions, including their license and metadata
+files, are bundled where available in the application _internal directory.
+Python and Tcl/Tk runtimes are included by PyInstaller under their own licenses.
+Live version additionally uses websocket-client 1.9.2 (Apache-2.0) and
+pysubs2 1.9.0 (MIT). Package license/metadata files accompany the bundled runtime.
+
+Dictionary updating procedure (for rebuilding from source):
+Download the latest JMdict XML from https://www.edrdg.org/jmdict/edict_doc.html
+and use jamdict's documented import tool to create an updated jamdict.db.
+Replace _internal/jamdict.db while the app is closed. The SQLite database must
+use jamdict's schema. Reopen the app to load it. Keep EDRDG attribution and
+the dictionary's license with any replacement database.
+https://jamdict.readthedocs.io/
+
+Online pronunciation uses edge-tts 7.2.8 (LGPL-3.0) and aiohttp 3.14.3
+(Apache-2.0), with their dependencies. Additional speech dependency license
+files are included under licenses/speech. Upstream source:
+https://github.com/rany2/edge-tts
+https://github.com/aio-libs/aiohttp
+The voice service is operated by Microsoft and requires internet connectivity.
+
+Optional AI setup downloads Ollama v0.34.2 (MIT) and Qwen3 8B (Apache-2.0).
+These large components are not bundled in this ZIP. Their upstream notices
+and model information are available from:
+https://github.com/ollama/ollama/tree/v0.34.2
+https://huggingface.co/Qwen/Qwen3-8B
+
+The application source is provided under GPL-3.0-or-later in Source.
+Third-party components retain their own licenses, not the application's license.
